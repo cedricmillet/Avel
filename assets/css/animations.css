@@ -1,0 +1,156 @@
+/*
+	ANIMATIONS CSS
+*/
+
+
+/* ------------------------- ANIMATION SOLEIL -----------------------*/
+
+.soleil { 
+  position: absolute;
+	top:15%;
+	right:15%;
+	margin: auto;  
+	width:70px;
+	height:70px;
+	border-radius:50%;	
+	background: yellow;
+	opacity:0.9;			
+	box-shadow: 0px 0px 40px 15px yellow;  
+}
+
+.rayon_box {
+  position: absolute;
+  margin: auto;
+	top:0px;
+	left:0px;
+  bottom: 0px;
+  right:0px;
+  width:70px;  
+  /*background: red;*/
+  
+  -webkit-animation: ray_anim 120s linear infinite;
+  animation: ray_anim 120s linear infinite;
+  
+}
+.soleil .rayon {  
+    background: yellow;
+    margin-left:10px;
+    position:absolute;
+    opacity:0.5;
+    border-radius: 5px;
+}
+/* rayons pairs */
+.soleil .rayon:nth-of-type(2n) {
+  width:5px;
+  height:15px;
+  animation: mouv_rayon_pair 3s linear infinite;
+}
+/* rayons impairs */
+.soleil .rayon:nth-of-type(2n+1) {
+  width:5px;
+  height:30px;
+  animation: mouv_rayon_impair 3s linear infinite;
+}
+
+.soleil .rayon:nth-of-type(1) {
+  -webkit-transform: rotate(180deg);
+  top: -50px;
+  left: 23px;
+}
+.soleil .rayon:nth-of-type(2) {
+  -webkit-transform: rotate(45deg);
+  top: -20px;
+  left: 68px;
+}
+.soleil .rayon:nth-of-type(3) {
+  -webkit-transform: rotate(90deg);
+  top: 21px;
+  left: 92px;
+}
+
+.soleil .rayon:nth-of-type(4) {
+  -webkit-transform: rotate(135deg);
+  top: 73px;
+  left: 70px;
+}
+
+.soleil .rayon:nth-of-type(5) {
+  -webkit-transform: rotate(180deg);
+  top: 82px;
+  left: 23px;
+}
+
+.soleil .rayon:nth-of-type(6) {
+  -webkit-transform: rotate(225deg);
+  top: 76px;
+  left: -24px;
+}
+
+.soleil .rayon:nth-of-type(7) {
+  -webkit-transform: rotate(270deg);
+  top: 21px;
+  left: -44px;
+}
+
+.soleil .rayon:nth-of-type(8) {
+  -webkit-transform: rotate(-45deg);
+  top: -20px;
+  left: -28px;
+}
+
+@-webkit-keyframes ray_anim { 
+		0% { -webkit-transform: rotate(0deg); transform: rotate(0deg);}    
+    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg);}
+}
+
+@-webkit-keyframes mouv_rayon_pair { 
+		0% { 
+      background: #EEF17E;
+      width: 3px;
+      box-shadow: none;
+     }    
+    50% { 
+    background: yellow;
+      width:7px;
+      box-shadow: 0px 0px 40px 15px yellow;
+      
+  }
+  100% { 
+    background: #EEF17E;
+    width:3px;
+     box-shadow: none;
+  }
+}
+
+@-webkit-keyframes mouv_rayon_impair { 
+		0% { 
+      background: yellow;
+      width: 3px;
+      box-shadow: 0px 0px 40px 15px yellow;  
+     }    
+    50% { 
+    background: #EEF17E;
+      width:7px;
+      box-shadow: none;
+  }
+  100% { 
+    background: yellow;
+    width:3px;
+	  box-shadow: 0px 0px 40px 15px yellow;  
+  }
+}
+
+
+g#tracteur {
+	animation: anim_tracteur 10s;
+}
+
+
+@-webkit-keyframes anim_tracteur { 
+	0% { 
+		transform: translateX(0%);
+	}    
+    100% { 
+    	transform: translateX(70%);
+    }
+}
